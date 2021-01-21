@@ -6,7 +6,7 @@ import Header from './Header';
 const App = () => {
   return (
     <div className="scoreboard">
-      <Header />
+      <Header title="Scoreboard" totalPlayer={1} />
       
     </div>
   )
