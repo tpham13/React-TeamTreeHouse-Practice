@@ -1,8 +1,8 @@
 
 import './App.css';
 
-
-function Header() {
+//another way of writing components is using the arrow function instead of function Header()
+const Header = () => {
   return (
     <header>
       <h1>Scoreboard</h1>
