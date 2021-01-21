@@ -10,7 +10,7 @@ const Player = (props) => {
                 {props.score}
             </ul>
         </span>
-        <Counter buttonDecrement="-" buttonIncrement="+" score={40}/>
+        <Counter buttonDecrement="-" buttonIncrement="+" />
        
       </div>
     );
