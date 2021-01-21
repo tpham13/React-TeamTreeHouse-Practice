@@ -5,7 +5,10 @@ const Player = (props) => {
     return (
       <div className="player">
         <span className="player-name">
-        {props.name}
+            <ul>
+                {props.name}
+                {props.score}
+            </ul>
         </span>
         <Counter buttonDecrement="-" buttonIncrement="+" score={40}/>
        
