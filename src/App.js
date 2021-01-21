@@ -10,7 +10,7 @@ const App = (props) => {
   console.log(props)
   return (
     <div className="scoreboard">
-      <Header title="Scoreboard" totalPlayer={1} />
+      <Header title="Scoreboard" totalPlayer={props.initialPlayers.length} />
       
           {props.initialPlayers.map( player => 
             <Player 
