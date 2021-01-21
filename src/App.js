@@ -1,14 +1,14 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+
+function Header() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Hello World
-      </header>
-    </div>
+    <header>
+      <h1>Scoreboard</h1>
+      <span className="stat">Players:1</span>
+    </header>
   );
 }
 
-export default App;
+export default Header;
