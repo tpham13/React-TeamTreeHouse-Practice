@@ -8,11 +8,14 @@ const App = () => {
   return (
     <div className="scoreboard">
       <Header title="Scoreboard" totalPlayer={1} />
-      <Header />
-      <Player />
-      
+      <Player name="Thanh" score={50} />
     </div>
   )
 }
 
 export default App;
+    
+
+
+
+
