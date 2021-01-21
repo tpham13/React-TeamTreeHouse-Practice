@@ -12,12 +12,13 @@ const App = (props) => {
     <div className="scoreboard">
       <Header title="Scoreboard" totalPlayer={1} />
       
-      {props.initialPlayers.map( player => 
-        <Player 
-          name={player.name}
-          score={player.score}
-        />
-      )}
+          {props.initialPlayers.map( player => 
+            <Player 
+              name={player.name}
+              score={player.score}
+              key={player.id.toString()}
+            />
+          )}
     </div>
   );
 }
