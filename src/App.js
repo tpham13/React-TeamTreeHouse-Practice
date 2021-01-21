@@ -1,14 +1,15 @@
 
-import './App.css';
+import './index.css';
+import Header from './Header';
 
 //another way of writing components is using the arrow function instead of function Header()
-const Header = () => {
+const App = () => {
   return (
-    <header>
-      <h1>Scoreboard</h1>
-      <span className="stat">Players:1</span>
-    </header>
-  );
+    <div className="scoreboard">
+      <Header />
+      
+    </div>
+  )
 }
 
-export default Header;
+export default App;
