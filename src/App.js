@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className="scoreboard">
       <Header title="Scoreboard" totalPlayer={1} />
-      <Player name="Thanh" score={50} />
+      <Player name="Thanh" />
     </div>
   )
 }
