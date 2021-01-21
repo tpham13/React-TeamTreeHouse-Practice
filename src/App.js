@@ -1,5 +1,5 @@
 
-import './App.css';
+import './index.css';
 
 //another way of writing components is using the arrow function instead of function Header()
 const Header = () => {
@@ -11,4 +11,9 @@ const Header = () => {
   );
 }
 
+
+
 export default Header;
+
+
+
