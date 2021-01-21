@@ -7,7 +7,7 @@ const Player = () => {
         <span className="player-name">
         Thanh
         </span>
-        <Counter />
+        <Counter buttonDecrement="-" buttonIncrement="+" score={40}/>
        
       </div>
     );

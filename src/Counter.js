@@ -1,10 +1,10 @@
 import './index.css';
-const Counter = () => {
+const Counter = (props) => {
     return (
     <div className="counter">
-            <button className="counter-action decrement"> - </button>
-            <span className="counter-score">35</span>
-            <button className="counter-action increment"> + </button>
+            <button className="counter-action decrement"> {props.buttonDecrement} </button>
+            <span className="counter-score"> {props.score} </span>
+            <button className="counter-action increment"> {props.buttonIncrement} </button>
     </div>
     );
 }
