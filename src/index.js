@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import  Header  from './App';
-import  Player  from './Player';
+import  App  from './App';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   
   <React.StrictMode>
-    <Header />,
-    <Player />,
+    <App />
   </React.StrictMode>,
   
   document.getElementById('root')
