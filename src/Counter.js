@@ -16,24 +16,30 @@ class Counter extends React.Component  {
     }
     
     //incrementScore does 2 things: 1 update the score, 2 tell React to re-rendered to make sure everything is up to date in the UI
-    incrementScore() {
+    incrementScore = () => {
         // console.log("inside incrementScore")
         // console.log(this)
         this.setState({
             score: this.state.score + 1
         });
     }
+
+    decrementScore = () => {
+        this.setState({
+            score: this.state.score - 1
+        })
+    }
     render() {
         console.log(this)
         return (
             <div className="counter">
                
-                    <button className="counter-action decrement"> - </button>
+                    <button className="counter-action decrement" onClick={this.decrementScore}> - </button>
                     {/* this is refer to the class itself and when using class component, we need to add this. We also replace this.props.score to this.state.score b/c Counter now maintain its own score */}
                     <span className="counter-score"> {this.state.score} </span>
-                    {/* <button className="counter-action increment" onClick={this.incrementScore.bind(this)}> + </button> */}
+                    <button className="counter-action increment" onClick={this.incrementScore}> + </button>
                     {/* if we write it using the arrow function, it automatically bind them to the scope in which they defined */}
-                <button className="counter-action increment" onClick={() => this.incrementScore()}> + </button> 
+                {/* <button className="counter-action increment" onClick={() => this.incrementScore()}> + </button>  */}
             </div>
             ); 
     } 
