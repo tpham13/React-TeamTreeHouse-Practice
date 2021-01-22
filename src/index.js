@@ -5,35 +5,11 @@ import  App  from './App';
 
 import reportWebVitals from './reportWebVitals';
 
-const players = [
-  {
-    name: "Thanh",
-    score: 50,
-    id: 1
-  },
-  {
-    name: "Ngan",
-    score: 40,
-    id: 2
-  },
-  
-  {
-    name: "Chris",
-    score: 30, 
-    id: 3
-  },
-  
-  {
-    name: "Oliver",
-    score: 20,
-    id: 4
-  }
-  
-];
+
 ReactDOM.render(
   
   <React.StrictMode>
-    <App initialPlayers={players} />
+    <App />
   </React.StrictMode>,
   
   document.getElementById('root')

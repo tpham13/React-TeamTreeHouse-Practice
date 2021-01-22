@@ -5,9 +5,9 @@ const Player = (props) => {
     return (
       <div className="player">
         <span className="player-name">
+            <button className="remove-player" onClick={ () => props.removePlayer(props.id)} >x</button>
             <ul>
                 {props.name}
-                {props.score}
             </ul>
         </span>
         <Counter />
