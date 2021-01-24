@@ -1,4 +1,4 @@
-import './index.css';
+import React from 'react';
 import Counter from './Counter';
 
 const Player = (props) => {
@@ -10,7 +10,7 @@ const Player = (props) => {
                 {props.name}
             </ul>
         </span>
-        <Counter />
+        <Counter score={ props.score }/>
        
       </div>
     );

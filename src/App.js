@@ -1,14 +1,11 @@
-
-import './index.css';
+import React, { Component } from 'react';
 import Header from './Header';
 import Player from './Player';
-import React from 'react';
-
 
 //another way of writing components is using the arrow function instead of function Header()
 /* 
 */
-class App extends React.Component {
+class App extends Component {
 /* App is responsible for rendering Player component so it's going to own and maintain 
 the player state. That state will then passed down and avaiable to the player component as well
 as all children of App via props. So we need to make App a stateful component
@@ -17,20 +14,24 @@ as all children of App via props. So we need to make App a stateful component
     players: [
       {
         name: "Thanh",
+        score: 0,
         id: 1,
       },
       {
         name: "Ngan",
+        score: 0,
         id: 2,
       },
       
       {
         name: "Chris",
+        score: 0,
         id: 3, 
       },
       
       {
         name: "Oliver",
+        score: 0,
         id: 4,
       }
       
@@ -52,6 +53,7 @@ as all children of App via props. So we need to make App a stateful component
       
           {this.state.players.map( player => 
             <Player 
+              score ={player.score}
               name={player.name}
               id={player.id}
               key={player.id.toString()}

@@ -1,5 +1,5 @@
+import React from 'react';
 import './index.css';
-
 //another way of writing components is using the arrow function instead of function Header()
 const Header = (props) => {
     console.log(props) // console will show this => {title: "Scoreboard", totalPlayer: 1}
