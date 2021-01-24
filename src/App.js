@@ -38,6 +38,16 @@ as all children of App via props. So we need to make App a stateful component
     ]
   };
 
+  // incrementScore does 2 things: 1 update the score, 2 tell React to re-rendered to make sure everything is up to date in the UI
+  handleScoreChange = (delta) => {
+        // this.setState( prevState => {
+        //     return {
+        //         score: prevState.score + 1
+        //     }
+        // });
+        console.log(delta);
+  }
+
   handleRemovePlayer = (id) => {
     
     this.setState( prevState => {
@@ -57,6 +67,7 @@ as all children of App via props. So we need to make App a stateful component
               name={player.name}
               id={player.id}
               key={player.id.toString()}
+              changeScore={this.handleScoreChange}
               removePlayer={this.handleRemovePlayer}
             />
           )}

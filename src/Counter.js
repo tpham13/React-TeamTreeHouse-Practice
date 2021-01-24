@@ -26,10 +26,10 @@ const Counter = (props) => {
     return (
             <div className="counter">
                
-                    <button className="counter-action decrement" > - </button>
+                    <button className="counter-action decrement" onClick={() => props.changeScore(-1)}> - </button>
                     {/* this is refer to the class itself and when using class component, we need to add this. We also replace this.props.score to this.state.score b/c Counter now maintain its own score */}
                     <span className="counter-score"> {props.score} </span>
-                    <button className="counter-action increment" > + </button>
+                    <button className="counter-action increment" onClick={() => props.changeScore(1)}> + </button>
                     {/* if we write it using the arrow function, it automatically bind them to the scope in which they defined */}
                 {/* <button className="counter-action increment" onClick={() => this.incrementScore()}> + </button>  */}
             </div>
