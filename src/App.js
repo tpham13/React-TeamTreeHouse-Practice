@@ -38,14 +38,24 @@ as all children of App via props. So we need to make App a stateful component
     ]
   };
 
-  // incrementScore does 2 things: 1 update the score, 2 tell React to re-rendered to make sure everything is up to date in the UI
-  handleScoreChange = (delta) => {
-        // this.setState( prevState => {
-        //     return {
-        //         score: prevState.score + 1
-        //     }
-        // });
-        console.log(delta);
+  // handleScoreChange does 2 things: 1 update the score, 2 tell React to re-rendered to make sure everything is up to date in the UI
+  handleScoreChange = (index, delta) => {
+    this.setState( prevState => {
+      // New 'players' array – a copy of the previous `players` state
+      const updatedPlayers = [ ...prevState.players ];
+      // A copy of the player object we're targeting
+      const updatedPlayer = { ...updatedPlayers[index] };
+
+      // Update the target player's score
+      updatedPlayer.score += delta;
+      // Update the 'players' array with the target player's latest score
+      updatedPlayers[index] = updatedPlayer;
+
+      // Update the `players` state without mutating the original state
+      return {
+        players: updatedPlayers
+      };
+    });
   }
 
   handleRemovePlayer = (id) => {
@@ -61,12 +71,13 @@ as all children of App via props. So we need to make App a stateful component
     <div className="scoreboard">
       <Header title="Scoreboard" totalPlayer={this.state.players.length} />
       
-          {this.state.players.map( player => 
+          {this.state.players.map((player, index) => 
             <Player 
               score ={player.score}
               name={player.name}
               id={player.id}
               key={player.id.toString()}
+              index={index}
               changeScore={this.handleScoreChange}
               removePlayer={this.handleRemovePlayer}
             />
