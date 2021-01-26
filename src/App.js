@@ -69,7 +69,9 @@ as all children of App via props. So we need to make App a stateful component
   render () {
   return (
     <div className="scoreboard">
-      <Header title="Scoreboard" totalPlayer={this.state.players.length} />
+      <Header 
+        title="Scoreboard" 
+        players={this.state.players} />
       
           {this.state.players.map((player, index) => 
             <Player 
