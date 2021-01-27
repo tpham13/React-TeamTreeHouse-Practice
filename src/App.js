@@ -63,16 +63,20 @@ as all children of App via props. So we need to make App a stateful component
   prevPlayerId = 4;
 
   handleAddPlayer = (name) => {
-    this.setState({ 
-      players: [
-        ...this.state.players,
-        {
-          name,
-          score: 0,
-          id: this.prevPlayerId += 1
-        }
-      ]
-    })
+    // console.log(...this.state.players)
+    this.setState( prevState => { 
+      return { 
+        players: [
+          //the spread operator here represent all the player on existing players on the scoreboard before new player got added
+          ...this.state.players,
+          {
+            name,
+            score: 0,
+            id: this.prevPlayerId += 1
+          }
+        ]
+      };
+    });
   }
   handleRemovePlayer = (id) => {
     

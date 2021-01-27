@@ -16,6 +16,8 @@ class AddPlayerForm extends React.Component {
         // that would cause our app to reload in the browser, which mean that we'd lose all of our app state in the process
         e.preventDefault();
         this.props.addPlayer(this.state.value);
+        // to clear the text in the text field form:
+        this.setState({ value: ''});
 
     }
     render() {
