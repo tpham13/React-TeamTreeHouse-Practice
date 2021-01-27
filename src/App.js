@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Player from './Player';
+import AddPlayerForm from './AddPlayerForm';
 
 //another way of writing components is using the arrow function instead of function Header()
 /* 
@@ -58,6 +59,21 @@ as all children of App via props. So we need to make App a stateful component
     });
   }
 
+  // player id counter
+  prevPlayerId = 4;
+
+  handleAddPlayer = (name) => {
+    this.setState({ 
+      players: [
+        ...this.state.players,
+        {
+          name,
+          score: 0,
+          id: this.prevPlayerId += 1
+        }
+      ]
+    })
+  }
   handleRemovePlayer = (id) => {
     
     this.setState( prevState => {
@@ -84,6 +100,7 @@ as all children of App via props. So we need to make App a stateful component
               removePlayer={this.handleRemovePlayer}
             />
           )}
+      <AddPlayerForm addPlayer={this.handleAddPlayer}/>
     </div>
   );
 }
